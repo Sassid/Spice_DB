@@ -22,8 +22,6 @@ $artists = getAllArtists($pdo)
 <main>
     <!-- <?php debug($artists) ?> -->
 
-    <h1>zig a zig ah!</h1>
-
     <section class="spice-girls-cards">
         <?php foreach ($artists as $artist) { ?>
             <!-- <?php debug($artist) ?> -->
@@ -40,7 +38,7 @@ $artists = getAllArtists($pdo)
                             <p><span class="question">Age when she joined : </span> <span class="answer"><?= $artist['age_when_joined'] ?></span></p>
                             <p><span class="question">Personal Quote : </span> <span class="answer"><?= $artist['personal_quote'] ?>"</p>
                         </div>
-                        <a href="" class="button">More</a>
+                        <a href="./artist_details.php" class="button">More</a>
                     </div>
                 </div>
             </div>
