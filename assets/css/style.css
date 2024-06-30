@@ -2,10 +2,16 @@
 
 /* * RESET */
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* * GENERAL */
@@ -13,6 +19,7 @@
 :root {
   --primary-color: #051a99;
   --secondary-color: rgb(236, 236, 236);
+  --tertiary-color: #9c0f20;
   --padding: 20px;
   --border-radius: 10px;
   --main-font: "Genos";
@@ -23,14 +30,36 @@ body {
   background-image: url("../img/union_jack2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   font-family: var(--main-font);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+/* * COMPONENTS */
+
+.button {
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: 2px 20px;
+  color: var(--primary-color);
+  transition: color, background-color 300ms;
+}
+
+.button:hover {
+  border: 2px solid var(--secondary-color);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  cursor: pointer;
 }
 
 /* * HEADER */
 header {
   height: 100px;
   background-color: var(--secondary-color);
-  padding: 20px 100px;
+  padding: 20px 50px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -42,45 +71,72 @@ header img {
 
 header p {
   font-family: var(--heading-font);
+  font-size: clamp(15px, 2.5vw, 40px);
 }
 
 /* * DROP DOWN MENU */
 
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+.dropdown a {
+  display: block;
+  color: var(--primary-color);
+  font-size: 20px;
 }
 
-nav {
-    overflow: hidden;
+.dropdown-first-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-width: 100px;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: 2px 20px;
+  transition: color, background-color 300ms;
 }
 
-.nav {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    background-color: var(--primary-color);
-    border-radius: var(--border-radius);
+.dropdown-first-row:hover {
+  border: 2px solid var(--secondary-color);
+  background-color: var(--primary-color);
+}
+.dropdown-first-row:hover a {
+  color: var(--secondary-color);
 }
 
-.nav-item {
-    position: relative;
+.dropdown-first-row:hover svg {
+  stroke: var(--secondary-color);
 }
 
-.nav-link {
-    /* display: block; */
-    padding: 14px 20px;
-    color: white;
-    text-decoration: none;
+.dropdown-first-row svg:hover {
+  cursor: pointer;
 }
 
-.nav-link:hover {
-    background-color: #575757;
+.dropdown-content {
+  display: none;
+  border-radius: var(--border-radius);
+  width: 160.6px;
+  position: absolute;
+  background-color: var(--secondary-color);
 }
 
+div.active {
+  display: block;
+}
 
+.dropdown-row {
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: 2px 20px;
+  transition: color, background-color 300ms;
+}
+
+.dropdown-row:hover {
+  border: 2px solid var(--secondary-color);
+  background-color: var(--primary-color);
+}
+
+.dropdown-row:hover a {
+  color: var(--secondary-color);
+}
 /* * SIGN IN */
 
 #signInButton {
@@ -88,29 +144,31 @@ nav {
 }
 
 .popup {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+  background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
 }
 
 .popup-content {
-  background-color: white;
+  /* border: solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  background-color: var(--secondary-color);
   padding: 20px;
   border-radius: 5px;
-  width: 300px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 400px;
+  height: 400px;
+  box-shadow: 0 0 10px rgba(5, 5, 10, 0.5);
   position: relative;
-}
-
-.popup-content div {
-  display: flex;
-  align-items: center;
 }
 
 .close {
@@ -119,4 +177,45 @@ nav {
   right: 10px;
   font-size: 20px;
   cursor: pointer;
+}
+
+/* * FORM */
+
+form {
+  /* border: solid blue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+form input {
+  width: 100%;
+}
+
+form button {
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: 2px 20px;
+  color: var(--primary-color);
+  transition: color, background-color 300ms;
+}
+
+form button:hover {
+  border: 2px solid var(--secondary-color);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+/* * FOOTER */
+
+footer {
+  height: 100px;
+  background-color: var(--secondary-color);
+  padding: 20px 50px;
+}
+
+footer p {
+  text-align: center;
 }

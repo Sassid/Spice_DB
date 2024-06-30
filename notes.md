@@ -669,6 +669,22 @@ If you can't dance to this, you can't do nothing for me baby"),
 ('Oxygen', 238, 3, 1, ''),
 ('Goodbye', 275, 3, 1, '')
 ;
+```
 
+```sql
+CREATE TABLE album (
+    album_id INT AUTO_INCREMENT PRIMARY KEY,
+    album_name VARCHAR(100),
+    release_year YEAR
+);
 
+CREATE TABLE admin (
+    admin_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100),
+    password VARCHAR(100)
+);
+
+INSERT INTO admin (username, password) VALUES ('admin01', 987654);
+
+UPDATE artist SET picture_url = './assets/img/cards/geri.png' WHERE artist_id = 2;
 ```
