@@ -38,7 +38,7 @@ $artists = getAllArtists($pdo)
                             <p><span class="question">Age when she joined : </span> <span class="answer"><?= $artist['age_when_joined'] ?></span></p>
                             <p><span class="question">Personal Quote : </span> <span class="answer"><?= $artist['personal_quote'] ?>"</p>
                         </div>
-                        <a href="./artist_details.php" class="button">More</a>
+                        <a href="./artist_details.php?id=<?= $artist?>" class="button">More</a>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Kavoon&display=swap");
+
+/* * RESET */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* * GENERAL */
+
+:root {
+  --primary-color: #051a99;
+  --secondary-color: rgb(236, 236, 236);
+  --tertiary-color: #9c0f20;
+  --padding: 20px;
+  --border-radius: 10px;
+  --main-font: "Genos";
+  --heading-font: "Kavoon";
+}
+
+main {
+    /* border: solid green; */
+    margin: 20px auto;
+    padding: var(--padding);
+    width: 80%;
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 10px rgba(5, 5, 10, 0.5);
+    font-size: 1.2em;
+  }
