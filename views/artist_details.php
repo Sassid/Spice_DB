@@ -14,11 +14,19 @@ require_once '../src/config/db_connect.php';
 require_once '../src/repo/artist_repo.php';
 
 $pdo = connectDB();
+<<<<<<< HEAD
 $artistDetails = getArtistDetailsById($pdo, $_GET["id"]);
 
 debug($_GET);
 
 debug($artistDetails);
+=======
+// $artistDetails = getArtistDetailsById($pdo, $_GET)
+
+debug($_GET)
+
+
+>>>>>>> d4bfb9e1ee88935962054567604f74daa7074d36
 
 ?>
 
