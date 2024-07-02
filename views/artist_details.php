@@ -13,6 +13,13 @@ include_once '../src/functions/debug.php';
 require_once '../src/config/db_connect.php';
 require_once '../src/repo/artist_repo.php';
 
+$pdo = connectDB();
+$artistDetails = getArtistDetailsById($pdo, $_GET["id"]);
+
+debug($_GET);
+
+debug($artistDetails);
+
 ?>
 
 <main>
